@@ -1,3 +1,7 @@
+[![CI](https://github.com/z13972509570-spec/ai-photo-dedup/actions/workflows/ci.yml/badge.svg)](https://github.com/z13972509570-spec/ai-photo-dedup/actions)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://python.org)
+
 # 🤖 AI Photo Dedup — AI 智能清理重复照片
 
 > 基于 **感知哈希 (Perceptual Hash) + 深度学习特征向量** 的重复照片智能检测与清理工具
@@ -88,3 +92,6 @@ BACKUP_DIR = './backup'     # 删除前备份目录
 ## 📝 License
 
 MIT License © 2026
+
+---
+版本: 1.0.0 | 许可证: MIT | 维护者: @z13972509570-spec

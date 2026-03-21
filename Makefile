@@ -1,21 +1,21 @@
-.PHONY: install test clean run
+.PHONY: install test lint format clean
 
 install:
-	pip install -r requirements.txt
+	pip install -e .
 
 test:
-	pytest tests/ -v
+	pytest tests/ -v --cov=src
+
+lint:
+	ruff check src/
+	black --check src/
+	mypy src/
+
+format:
+	black src/
+	ruff check --fix src/
 
 clean:
 	find . -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
 	find . -type f -name "*.pyc" -delete
 	rm -rf build/ dist/ *.egg-info/
-
-run:
-	python dedup.py scan ./photos
-PYEOF
-
-echo "✅ 测试和 Makefile 已生成"
-echo ""
-echo "=== 项目结构 ==="
-find . -type f | grep -v __pycache__ | sort
